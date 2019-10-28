@@ -1,0 +1,36 @@
+spring:
+  sleuth:
+    sampler:
+      percentage: 1.0       # 100% for alpha/beta env
+
+app:
+  h5:
+    domain-name: ${ci.environment.slug}-h5.${app.domain-name}
+  m:
+    domain-name: ${ci.environment.slug}-m2.${app.domain-name}
+  api:
+    domain-name: ${ci.environment.slug}-app.${app.domain-name}
+    
+    
+rocketmq:
+  host: rocketmq.${ci.environment.slug}.mobike.io
+  port: 9876
+  address: ${rocketmq.host}:${rocketmq.port}
+
+  default:
+    address: rocketmq.${ci.environment.slug}.mobike.io:9876
+
+  mola:
+    address: rocketmq.${ci.environment.slug}.mobike.io:9876
+
+  heishi:
+    address: rocketmq.${ci.environment.slug}.mobike.io:9876
+    
+  order:
+    producer:
+        nameSrvAddr: rocketmq.${ci.environment.slug}.mobike.io:9876
+    consumer:
+        nameSrvAddr: rocketmq.${ci.environment.slug}.mobike.io:9876
+        enabled: true
+
+

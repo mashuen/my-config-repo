@@ -1,0 +1,31 @@
+info:
+  swagger-url: http://${spring.cloud.client.ipAddress}:${server.port}/swagger-ui.html
+
+logging:
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSSZ}  ${LOG_LEVEL_PATTERN:-%5p} ${HOSTNAME:- } [%X{companyCode}] --- [%t] %-40.40logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
+  file: ${logging.path}/${ci.environment.slug}-${spring.application.name}-${spring.application.instance}.log
+
+feign:
+  certify:
+    httpClient:
+      defaultMaxPerRoute: 30
+      maxTotal: 30
+  httpclient:
+    connectTimeout: 3000
+    connectionRequestTimeout: 2000
+    connectionrequesttimeout: 2000
+    connecttimeout: 3000
+    defaultMaxPerRoute: 100
+    defaultmaxperroute: 100
+    enabled: true
+    maxTotal: 200
+    maxtotal: 200
+    socketTimeout: 3000
+    sockettimeout: 3000
+  hystrix:
+    enabled: true
+taxi:
+  riskControl:
+    cancel:
+      cancelWhiteList: 13029000102
