@@ -1,7 +1,7 @@
 my:
   name: user-center-application
 
-  rabbitmq: test2
+  rabbitmq: test23
 
 
 
