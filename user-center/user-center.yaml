@@ -3,9 +3,6 @@ my:
 
 hello: test23
 
-spring:
-  application:
-    port: 9999
 
 
 
